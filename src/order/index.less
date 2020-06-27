@@ -1,0 +1,73 @@
+.ele-order-container {
+	.ele-order-item {
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+		margin: 10px auto;
+		padding: 10px;
+
+		.order-body {
+			display: flex;
+
+			.order-store-image {
+				text-align: right;
+				margin-right: 10px;
+
+				img {
+					width: 35px;
+				}
+			}
+
+			.order-message {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+
+				.order-status-store-name {
+					display: flex;
+					margin-bottom: 5px;
+    				padding-bottom: 10px;
+    				border-bottom: 1px solid #eee;
+
+					.store-name {
+						flex: 2;
+						font-size: 16px;
+
+						.order-time {
+							font-size: 10px;
+						}
+					}
+
+					.order-status {
+						flex: 1;
+					    text-align: right;
+					    margin-right: 10px;
+					    font-size: 14px;
+					}
+				}
+
+				.goods-message {
+					display: flex;
+					padding-top: 10px;
+    				padding-bottom: 10px;
+
+					span {
+						display: inline-block;
+						font-size: 14px;
+					}
+
+					.goods-name {
+						flex: 2;
+					}
+
+					.total-price {
+						flex: 1;
+						margin-right: 10px;
+						text-align: right;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}

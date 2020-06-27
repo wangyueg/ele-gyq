@@ -1,0 +1,62 @@
+.discover-container {
+	.discover-top-banner {
+		display: flex;
+	    flex-direction: column;
+	    font-size: 10px;
+	    background: #fff;
+
+	    .discover-top-banner-item {
+	    	width: 50%;
+		    height: 21.333333vw;
+		    margin-left: 50%;
+		    display: flex;
+		    padding: 5.866667vw 0;
+		    box-sizing: border-box;
+
+		    .title {
+		    	display: flex;
+    			flex-direction: column;
+    			width: 30vw;
+    			margin-left: 2vw;
+
+    			span:first-child {
+			    	font-size: 15px;
+			    }
+
+			    span {
+			    	overflow: hidden;
+				    text-overflow: ellipsis;
+				    white-space: nowrap;
+			    }
+		    }
+
+		    img {
+		    	width: 12vw;
+		    	height: 12vw;
+		    }
+
+		    &:nth-child(2n) {
+			    border-bottom: 1px solid #eee;
+			}
+
+			&:first-child {
+		    	width: 50%;
+			    height: 42.666667vw;
+			    position: absolute;
+			    display: flex;
+			    flex-direction: column;
+			    padding: 5.866667vw 2.933333vw 1.6vw 4.266667vw;
+			    box-sizing: border-box;
+			    justify-content: space-between;
+			    margin-left: auto;
+			    border-right: 1px solid #eee;
+
+			    img {
+			    	width: 20vw;
+			    	height: 20vw;
+	    			align-self: flex-end;
+			    }
+		    }
+	    }
+	}
+}
