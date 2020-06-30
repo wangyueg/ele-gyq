@@ -2,7 +2,6 @@ import fetch from './fetch';
 import * as Types from './types';
 
 export default ({dispatch, getState}) => (next) => async (action) => {
-	console.log(getState())
 	if(action.payload && action.payload.url && action.type) {
 		try {
 			//异步请求数据

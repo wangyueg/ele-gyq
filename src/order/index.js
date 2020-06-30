@@ -5,17 +5,34 @@ import * as actionCreators from './actionCreators';
 import './index.less';
 
 let OrderView = (props) => {
+
+	const { OrderState } = props;
+	const getPurchasedGoodsName = (purchasedGoods) => {
+		let goodsName = [];
+		purchasedGoods.map(item => {
+			goodsName.push(item.name);
+		});
+		return goodsName.join(',');
+	}
+
 	//订单状态：订单已完成-1 订单配送中-2 订单已取消-3 
 	//订单取消状态：您主动取消-1 商家取消-2 其他-0
 	useEffect(() => {
 		props.getOrdersList();
-	}, []); 
-
-	let orders = props.OrderState.ordersData ? props.OrderState.ordersData : [];
+	}, []);
+	
+	//判断成功或者失败之后的操作
+	useEffect(() => {
+		if(OrderState.getOrdersListFlag) {
+			if (OrderState.orderCode !== 0) {
+				// alert(OrderState.ordersMsg);
+			}
+		}
+	}, [OrderState.ordersData, OrderState.orderCode, OrderState.ordersMsg]); 
 
 	return (
 		<div className="ele-order-container">
-			{orders.map((order, key) => {
+			{(OrderState.ordersData || []).map((order, key) => {
 				return (
 					<div className="ele-order-item" key={key}>
 						<div className="order-body">
@@ -26,7 +43,7 @@ let OrderView = (props) => {
 									<div className="order-status">{order.orderStatus}</div>
 								</div>
 								<div className="goods-message">
-									<span className="goods-name">商品</span>
+									<span className="goods-name">{getPurchasedGoodsName(order.purchasedGoods)}</span>
 									<span className="total-price">{order.totalPrice}</span>
 								</div>
 							</div>

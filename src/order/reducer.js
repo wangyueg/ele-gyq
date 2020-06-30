@@ -1,19 +1,26 @@
-import {GET_ORDERS_LIST} from './types';
+import * as Types from './types';
 
 export default (state={}, action) => {
 	switch(action.type) {
-		case GET_ORDERS_LIST:
+		case Types.GET_ORDERS_LIST:
 			return {
 				...state,
+				getOrdersListFlag: true,
 				ordersData: action.payload.data,
 				ordersMsg: action.payload.msg,
-				ordersCode: action.payload.code
-				
+				ordersCode: action.payload.code	
 			}
-		case 'STUDY_ENHANCER':
+		case Types.GET_ORDERS_LIST_FAIL:
 			return {
 				...state,
-				name: '111111'
+				getOrdersListFlag: true,
+				ordersMsg: action.payload.msg,
+				ordersCode: action.payload.code	
+			}
+		case Types.UPDATE_GET_ORDERS_LIST_FLAG:
+			return {
+				...state,
+				getOrdersListFlag: false
 			}
 		default:
 			return state;

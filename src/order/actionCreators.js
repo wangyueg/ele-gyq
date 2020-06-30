@@ -1,8 +1,8 @@
-import {GET_ORDERS_LIST} from './types';
+import * as Types from './types';
 
 export let getOrdersList = () => {
 	return {
-		type: GET_ORDERS_LIST,
+		type: Types.GET_ORDERS_LIST,
 		payload: {
 			url: '/ordersList',
 			method: 'post',
@@ -10,5 +10,11 @@ export let getOrdersList = () => {
 				phone: 15005184823
 			}
 		}
+	}
+}
+
+export let UpdateGetOrdersListFlag = () => {
+	return {
+		type: Types.UPDATE_GET_ORDERS_LIST_FLAG
 	}
 }
