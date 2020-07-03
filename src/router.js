@@ -18,7 +18,6 @@ import './index.less';
 
 
 export default (props) => {
-	console.log(props);
 	return (
 		<BrowserRouter>
 			<div className="ele-router-container">
@@ -53,7 +52,7 @@ export default (props) => {
 					depressiveImage={orderImage0}
 				/>
 				<MenuItem 
-					to="/login"
+					to="/profile"
 					title="我的"
 					activeImage={profileImage1}
 					depressiveImage={profileImage0}

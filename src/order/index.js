@@ -36,7 +36,7 @@ let OrderView = (props) => {
 				return (
 					<div className="ele-order-item" key={key}>
 						<div className="order-body">
-							<div className="order-store-image"><img src={order.storeImageUrl} /></div>
+							<img src={order.storeImageUrl} />
 							<div className="order-message">
 								<div className="order-status-store-name">
 									<div className="store-name"><span>{order.storeName}</span><br /><span className="order-time">{order.orderTimeStr}</span></div>
@@ -48,9 +48,9 @@ let OrderView = (props) => {
 								</div>
 							</div>
 						</div>
-						<div className="order-bottom">
+						{/* <div className="order-bottom">
 							
-						</div>
+						</div> */}
 					</div>
 				);
 			})}
